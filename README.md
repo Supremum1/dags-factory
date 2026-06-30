@@ -19,3 +19,10 @@ SCHEDULE = None
 CATCHUP = False
 RETRIES = 0
 TASK_SLEEP_SECONDS = 5
+```
+## Тест
+
+```
+docker compose exec airflow-scheduler airflow dags list | findstr stress_generated
+docker compose exec airflow-scheduler airflow dags trigger stress_generated_dag_1
+```
